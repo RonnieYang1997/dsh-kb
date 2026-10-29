@@ -80,7 +80,7 @@ dev_uninject_plugin {"match":"dsh-kb"}         # 卸载：fiber dispose → work
 ## 已知限制
 
 - 面板只读（状态 + 最近入库 + 刷新）；`kb_reindex` 在面板里按 403 拒绝，除非开启 `reindex`。
-- 与 MCP 同时挂载会导致工具重名（`kb_search` 等），二选一。
+- kb-mcp 的 MCP 层已于 2026-10-29 退役（`kb/server.py`、`bin/kb_serve.py` 从仓库删除，留 git 历史），本插件是唯一前端；若日后要恢复第二前端，记得工具名别撞。
 - 首次调用会等 boot（约 **2s**，含 130MB 向量预热）；之后热态 10–30ms。
 
 ## 依赖
